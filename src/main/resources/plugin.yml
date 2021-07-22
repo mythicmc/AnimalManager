@@ -1,0 +1,12 @@
+name: 'AnimalManager'
+description: 'Manage pet owners, specific animal data and much more.'
+main: 'org.mythicmc.animalmanager.AnimalManagerPlugin'
+version: '1.4.0'
+api-version: '1.13'
+authors: ['HotLava03']
+
+commands:
+    animalmanager:
+        aliases: ['am']
+        description: 'The main AnimalManager command.'
+        usage: '/am'
