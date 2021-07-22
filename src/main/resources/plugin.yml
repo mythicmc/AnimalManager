@@ -1,12 +1,33 @@
-name: 'AnimalManager'
-description: 'Manage pet owners, specific animal data and much more.'
-main: 'org.mythicmc.animalmanager.AnimalManagerPlugin'
-version: '1.4.0'
-api-version: '1.13'
-authors: ['HotLava03']
+name: "AnimalManager"
+version: "1.0.0-alpha.0"
+description: "A plugin to view animal info and modify them with a GUI."
+authors: ["retrixe"]
+main: "org.mythicmc.animalmanager.AnimalManager"
+api-version: "1.13"
 
+# Setting up commands here.
 commands:
-    animalmanager:
-        aliases: ['am']
-        description: 'The main AnimalManager command.'
-        usage: '/am'
+  amreload:
+    description: "Reloads AnimalManager configuration."
+    usage: "/amreload"
+    aliases: [animalmanagerreload]
+    permission: animalmanager.reload
+
+# Setting up permissions here.
+permissions:
+  animalmanager.*:
+    description: "Maximum permission for AnimalManager plugin."
+    children:
+      - animalmanager.reload
+      - animalmanager.view
+      - animalmanager.edit
+
+  animalmanager.reload:
+    description: "Allows reloading AnimalManager plugin config."
+    default: op
+  animalmanager.view:
+    description: "Allows Shift+right clicking animals to view AnimalManager GUI."
+    default: true
+  animalmanager.edit:
+    description: "Allows editing the AnimalManager GUI displayed when Shift+right clicking animals."
+    default: op
